@@ -85,9 +85,11 @@ $routes->scope('/', function (RouteBuilder $builder) {
      */
     $builder->fallbacks();
 
+    /**
+     * 管理画面用のルーティング
+     */
     Router::prefix('admin', function ($routes) {
         $routes->connect('/', ['controller' => 'Users', 'action' => 'login']);
-        // 標準のフォールバックルートを接続します。
         $routes->fallbacks(DashedRoute::class);
     });
 });

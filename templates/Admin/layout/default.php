@@ -40,11 +40,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
 <nav class="top-nav">
     <div class="top-nav-title">
-        <a href="/"><span>Cake</span>PHP</a>
+        <a href="/admin"><span>Cake</span>PHP</a>
     </div>
     <div class="top-nav-links">
-        <a target="_blank" href="https://book.cakephp.org/4/">Documentation</a>
-        <a target="_blank" href="https://api.cakephp.org/4/">API</a>
         <?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']) ?>
     </div>
 </nav>

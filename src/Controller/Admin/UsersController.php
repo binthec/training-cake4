@@ -40,8 +40,6 @@ class UsersController extends BaseController
 
         $result = $this->Authentication->getResult();
 
-//        debug($result);exit;
-
         if($result->isValid()){
             $target = $this->Authentication->getLoginRedirect() ?? '/admin/users';
             return $this->redirect($target);
