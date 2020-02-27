@@ -214,3 +214,11 @@ ServerRequest::addDetector('tablet', function ($request) {
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+/**
+ * 日付型フォーマットのデフォルト出力設定
+ */
+\Cake\I18n\Time::setToStringFormat('yyyy/MM/dd HH:mm');
+\Cake\I18n\FrozenTime::setToStringFormat('yyyy/MM/dd HH:mm');
+\Cake\I18n\Date::setToStringFormat('yyyy/MM/dd');
+\Cake\I18n\FrozenDate::setToStringFormat('yyyy/MM/dd');

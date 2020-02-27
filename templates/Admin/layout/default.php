@@ -43,6 +43,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <a href="/admin"><span>Cake</span>PHP</a>
     </div>
     <div class="top-nav-links">
+        <?= $this->Html->link('Reservation', ['controller' => 'Reservations', 'action' => 'index']) ?>
+        <?= $this->Html->link('Room', ['controller' => 'Rooms', 'action' => 'index']) ?>
         <?= $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout']) ?>
     </div>
 </nav>
