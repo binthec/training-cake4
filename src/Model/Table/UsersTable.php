@@ -39,6 +39,11 @@ class UsersTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        /**
+         * アソシエーション
+         */
+        $this->hasMany('Reservations');
     }
 
     /**

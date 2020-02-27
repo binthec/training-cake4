@@ -3,7 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\AdminAppController as BaseController;
-use Cake\I18n\Date;
 
 class ReservationsController extends BaseController
 {
@@ -52,11 +51,7 @@ class ReservationsController extends BaseController
 
         if ($this->request->is('post')) {
 
-            $data = $this->request->getData();
-            $reservation = $this->Reservations->patchEntity($reservation, $data);
-
-            //予約するユーザーはログインユーザーにする
-            $reservation->user_id = $this->Authentication->getIdentity()->get('id');
+            $reservation = $this->Reservations->patchEntity($reservation, $this->request->getData());
 
             if ($this->Reservations->save($reservation)) {
 

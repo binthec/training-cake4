@@ -18,7 +18,11 @@ class Reservation extends Entity
      */
     public function _getStartTime()
     {
-        return $this->start->format('H:i');
+
+        if ($this->start) return $this->start->format('H:i');
+
+        return '';
+
     }
 
     /**
@@ -28,7 +32,11 @@ class Reservation extends Entity
      */
     public function _getEndTime()
     {
-        return $this->end->format('H:i');
+
+        if ($this->end) return $this->end->format('H:i');
+
+        return '';
+
     }
 
 }

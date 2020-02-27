@@ -12,8 +12,8 @@
             <fieldset>
                 <legend><?= __('Edit Reservation') ?></legend>
                 <?= $this->Form->control('room_id'); ?>
-                <?= $this->Form->control('start', ['type' => 'text']); ?>
-                <?= $this->Form->control('end', ['type' => 'text']); ?>
+                <?= $this->Form->control('start'); ?>
+                <?= $this->Form->control('end'); ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>

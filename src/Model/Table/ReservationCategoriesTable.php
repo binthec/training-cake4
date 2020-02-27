@@ -5,7 +5,7 @@ use Cake\ORM\Table;
 use Cake\Routing\Router;
 use Cake\Validation\Validator;
 
-class ReservationsTable extends Table
+class ReservationCategoriesTable extends Table
 {
     /**
      * Initialize method
@@ -21,9 +21,7 @@ class ReservationsTable extends Table
         /**
          * アソシエーション
          */
-        $this->belongsTo('ReservationCategories');
-        $this->belongsTo('Rooms');
-        $this->belongsTo('Users');
+        $this->hasMany('Reservations');
     }
 
     /**
@@ -41,28 +39,4 @@ class ReservationsTable extends Table
         return $validator;
     }
 
-    /**
-     * beforeSave
-     *
-     * @param $event
-     * @param $entity
-     * @param $options
-     * @throws \Exception
-     */
-    public function beforeSave($event, $entity, $options)
-    {
-
-        $request = Router::getRequest();
-        $data = $request->getData();
-
-        //オブジェクトにしてあげないと良きに計らってくれないようなので
-        $entity->start = new \DateTime($data['start']);
-        $entity->end = new \DateTime($data['end']);
-
-        $userId = $request->getSession()->read('Auth.id');
-
-        //予約するユーザーはログインユーザーにする
-        $entity->user_id = $userId;
-
-    }
 }
